@@ -1,0 +1,44 @@
+{
+  "simulation": {
+    "packet_generation"                     : 1,
+    "total_time"                            : 1000,
+    "num_rounds"                            : 1,
+    "random_seed"                           : 200,
+    "time_window"                           : 0,
+    "share_sfc_instance"                    : 0,
+    "compute_loopback_time"                 : 1,
+    "sfc_instance_monitor_interval"         : 100,
+    "sfc_instance_monitor_window_size"      : 101,
+    "max_sla_violation_sfc_instance_shared" : 2,
+    "log_link_events"                       : 1,
+    "log_vnf_instance_events"               : 1,
+    "log_link_entity"                       : 1
+  },
+
+  "placement": {
+    "heuristic" : "SmartPlacement"
+  },
+
+  "scaling": {
+    "heuristic" : "SmartQueueScaling",
+    "parameters": {
+      "monitor_interval": 4,
+      "monitor_window_size": 4,
+      "monitor_vnf_cpu_load_threshold": 0.5,
+      "monitor_control_strategy_type": "None",
+      "waiting_time_between_scalings_ups": 0,
+      "monitor_max_window_size": 5,
+      "resource_increment": 0.1,
+      "resource_decrement": 0.1,
+      "scaling_up_threshold": 0.95,
+      "scaling_down_threshold": 0.25,
+      "acceptable_sla_violation_rate": {
+        "default": "0.005"
+      },
+      "resource_increase_type": "TCPInspiredIncrease",
+      "node_cpu_threshold": 0.1,
+      "resource_decrement_delta": 0.011,
+      "scaling_threshold_delta":1
+    }
+  }
+}

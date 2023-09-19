@@ -1,0 +1,80 @@
+{
+  "entities_number": {
+    "nodes"        : 2,
+    "vnfs"         : 1,
+    "sfcs"         : 1,
+    "users"        : 1,
+    "data_sources" : 1
+  },
+
+  "node": {
+      "cpu"            : [300000000],
+      "mem"            : [300000000],
+      "vnf_num"        : [1],
+      "group"          : [1],
+      "energy_max"     : [2, 4, 8],
+      "energy_idle"    : [1, 2, 4],
+      "disk_delay"     : [1],
+      "ran_node_prob"  : 0.1,
+      "core_node_prob" : 0.1,
+      "location": [
+          {"name": "Praia Vermelha - IC",  "key": "IC", "latitude": -22.9064, "longitude": -43.13325, "node_prob":  0.4},
+          {"name": "Praia Vermelha - Biblioteca", "key": "BIB","latitude": -22.90555, "longitude":-43.13268, "node_prob":  0.3},
+          {"name": "Praia Vermelha - Urbanismo", "key": "URB","latitude": -22.90465, "longitude": -43.13084, "node_prob":  0.2},
+          {"name": "Praia Vermelha - Física", "key": "FIS","latitude": -22.90557, "longitude": -43.13357, "node_prob":  0.4}
+      ]
+  },
+  "vnf": {
+      "cpu"                     : [31000],
+      "mem"                     : [31000],
+      "max_share"               : [1],
+      "min_bandwidth"           : [10000000],
+      "remote_data_access_cost" : [0],
+      "remote_data_access_prob" : [0],
+      "packet_cpu_demand"       : [1],
+      "packet_mem_demand"       : [1],
+      "packet_network_demand"   : [1],
+      "startup_ipt"             : [0],
+      "shutdown_ipt"            : [0],
+      "timeout"                 : [10000000],
+      "max_packet_queue"        : [-1],
+      "resource_intensive"      : ["CPU"]
+  },
+
+  "sfc": {
+      "vnf_num"                : [1],
+      "max_latency"            : [3],
+      "priority"               : [1],
+      "timeout"                : [10000000]
+  },
+
+  "sfc_requests": {
+    "arrival": "poisson",
+    "increase_requests_per_window":1,
+    "duration": [100000]
+  },
+
+  "user": {
+    "sfc_request_num"   : [1],
+    "latency"   : [0],
+    "bandwidth" : [10000000],
+    "loss_rate" : [0],
+    "priority"  : [1]
+  },
+
+  "link": {
+    "bandwidth"                : [10000000],
+    "loss_rate"                : [0],
+    "propagation"              : [1],
+    "energy_consumption"       : [13, 14, 15, 16],
+    "num_links_between_nodes"  : [1],
+    "loopback_bandwidth"       : [10000000]
+  },
+
+  "data_source": {
+    "packet_size"            : [0],
+    "packet_interval"        : [0],
+    "packets_burst_size"     : [0],
+    "packets_burst_interval" : [0]
+  }
+}

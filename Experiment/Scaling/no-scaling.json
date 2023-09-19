@@ -1,0 +1,21 @@
+{
+  "simulation": {
+    "packet_generation"                     : 1,
+    "total_time"                            : 65000,
+    "num_rounds"                            : 1,
+    "random_seed"                           : 200,
+    "time_window"                           : 500,
+    "share_sfc_instance"                    : 0,
+    "compute_loopback_time"                 : 1,
+    "sfc_instance_monitor_interval"         : 100,
+    "sfc_instance_monitor_window_size"      : 101,
+    "max_sla_violation_sfc_instance_shared" : 2,
+    "log_link_events"                       : 0,
+    "log_vnf_instance_events"               : 1,
+    "log_link_entity"                       : 1
+  },
+
+  "placement": {
+    "heuristic" : "SmartPlacement"
+  }
+}
